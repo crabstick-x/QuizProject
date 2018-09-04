@@ -101,12 +101,12 @@ def generate_username(name, age):
 
 def register_user():
     print("\n=========== REGISTER ===========")
-    name = raw_input("Name: ")
-    age = int(raw_input("Age: "))
+    name = input("Name: ")
+    age = int(input("Age: "))
     username = generate_username(name, age)
     print("Username: " + username)
-    password = raw_input("Password: ")
-    year_group = int(raw_input("Year Group: "))
+    password = input("Password: ")
+    year_group = int(input("Year Group: "))
 
     user_list_location = database_location + "/usernames.txt"
     fo = open(user_list_location, "a")
@@ -118,7 +118,7 @@ def register_user():
 
     fo.write(password + "," + name + "," + str(age) + "," + str(year_group) + "\n")
 
-    print("\n User Information Saved!")
+    print("\nUser Information Saved!")
 
     return username
 

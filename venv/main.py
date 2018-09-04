@@ -17,7 +17,7 @@ def init_menu():
     print("1) Take a Quiz")
     print("2) Get user quizzes")
 
-    choice = int(raw_input("\nChoice: "))
+    choice = int(input("\nChoice: "))
 
     if choice == 1:
         start_quiz(topics, difficulties)
@@ -37,7 +37,7 @@ def display_users():
 
     choice_number = 1
 
-    chosen_username = usernames[int((raw_input("\nChoice: "))) - 1]
+    chosen_username = usernames[int((input("\nChoice: "))) - 1]
 
     print("\nPlease enter a topic (Type 0 for all topics listed):")
     for topic in [topic for topic in topics if topic != "ALL"]:
@@ -46,14 +46,14 @@ def display_users():
 
     choice_number = 1
 
-    chosen_topic = topics[int((raw_input("\nChoice: ")))]
+    chosen_topic = topics[int((input("\nChoice: ")))]
 
     print("\nPlease enter a difficulty (Type 0 for all difficulties listed):")
     for difficulty in [difficulty for difficulty in difficulties if difficulty != "ALL"]:
         print(str(choice_number) + ") " + difficulty)
         choice_number = choice_number + 1
 
-    chosen_difficulty = difficulties[int((raw_input("\nChoice: ")))]
+    chosen_difficulty = difficulties[int((input("\nChoice: ")))]
 
     print("\n")
     load_user_info(chosen_username, chosen_difficulty, chosen_topic)

@@ -3,9 +3,9 @@ from random import shuffle
 
 
 def start_quiz(topics, difficulties):
-    username = str(raw_input("\nPlease enter your username: "))
+    username = str(input("\nPlease enter your username: "))
     if check_if_username_exists(username) == False:
-        if str(raw_input("Username not found. Would you like to create an account? (Y/N): ")).upper() == "Y":
+        if str(input("Username not found. Would you like to create an account? (Y/N): ")).upper() == "Y":
             username = register_user()
         else:
             username = ""
@@ -18,14 +18,14 @@ def start_quiz(topics, difficulties):
 
         choice_number = 1
 
-        chosen_topic = topics[int((raw_input("\nChoice: ")))]
+        chosen_topic = topics[int((input("\nChoice: ")))]
 
         print("\nPlease enter a difficulty:")
         for difficulty in [difficulty for difficulty in difficulties if difficulty != "ALL"]:
             print(str(choice_number) + ") " + difficulty)
             choice_number = choice_number + 1
 
-        chosen_difficulty = difficulties[int((raw_input("\nChoice: ")))]
+        chosen_difficulty = difficulties[int((input("\nChoice: ")))]
 
         answers = []
         questions = []
@@ -60,7 +60,7 @@ def run_quiz(questions, answers, correct_answers):
             print(alphabet[answer_id] + ") " + answer)
             answer_id = answer_id + 1
 
-        chosen_answer = raw_input("\nYour Answer (a, b, c...): ")
+        chosen_answer = input("\nYour Answer (a, b, c...): ")
         chosen_id = alphabet.index(chosen_answer.lower())
 
         if current_qustion_answers[chosen_id].upper() == correct_answers[question_id].upper():
