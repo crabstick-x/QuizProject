@@ -58,5 +58,7 @@ def display_users():
     print("\n")
     load_user_info(chosen_username, chosen_difficulty, chosen_topic)
 
+    init_menu()
+
 
 init_menu()
