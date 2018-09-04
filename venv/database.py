@@ -12,7 +12,7 @@ def load_user_info(usr, difficulty, topic):
     if os.path.isfile(database_location + "/" + usr + ".csv") == True:
 
         user_file = database_location + "/" + usr + ".csv"
-        fo = open(user_file, "rb")
+        fo = open(user_file, "rt")
         csv_reader = csv.reader(fo, delimiter=",")
 
         row_id = 0
@@ -73,7 +73,7 @@ def check_if_username_exists(usr):
 
 def load_quiz(topic, difficulty):
     quiz_file = questions_location + "/" + topic.lower() + ".csv"
-    fo = open(quiz_file, "rb")
+    fo = open(quiz_file, "rt")
     csv_reader = csv.reader(fo, delimiter=",")
 
     questions = []
