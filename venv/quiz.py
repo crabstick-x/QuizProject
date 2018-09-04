@@ -33,7 +33,7 @@ def start_quiz(topics, difficulties):
 
         questions, answers, correct_answers = load_quiz(chosen_topic, chosen_difficulty)
 
-        correct_total, total_questions, percentage = run_quiz(questions, answers, correct_answers, username)
+        correct_total, total_questions, percentage = run_quiz(questions, answers, correct_answers)
 
         calculated_grade = calculate_grade(percentage)
 
