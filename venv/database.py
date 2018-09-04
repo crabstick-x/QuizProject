@@ -126,6 +126,6 @@ def register_user():
 def save_quiz(username, correct, questions, grade, topic, difficulty):
     user_file = database_location + "/" + username + ".csv"
     fo = open(user_file, "a")
-    fo.write(topic + "," + correct + "," + questions + "," + grade + "," + difficulty & "\n")
+    fo.write(topic + "," + str(correct) + "," + str(questions) + "," + grade + "," + difficulty & "\n")
     fo.close()
     print("Data Saved!")
